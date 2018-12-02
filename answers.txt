@@ -1,5 +1,5 @@
 Answers:
 Day 1 Part 1: 484
 Day 1 Part 2: 367
-
-
+Day 2 Part 1: 7904
+Day 2 Part 2: wugbihckpoymcpaxefotvdzns
