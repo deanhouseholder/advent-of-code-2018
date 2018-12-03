@@ -1,5 +1,94 @@
 Answers:
-Day 1 Part 1: 484
-Day 1 Part 2: 367
-Day 2 Part 1: 7904
-Day 2 Part 2: wugbihckpoymcpaxefotvdzns
+
+Day 01 Part 1: 484
+Day 01 Part 2: 367
+
+Day 02 Part 1: 7904
+Day 02 Part 2: wugbihckpoymcpaxefotvdzns
+
+Day 03 Part 1: 121163
+Day 03 Part 2: 943
+
+Day 04 Part 1:
+Day 04 Part 2:
+
+Day 05 Part 1:
+Day 05 Part 2:
+
+Day 06 Part 1:
+Day 06 Part 2:
+
+Day 07 Part 1:
+Day 07 Part 2:
+
+Day 08 Part 1:
+Day 08 Part 2:
+
+Day 09 Part 1:
+Day 09 Part 2:
+
+Day 10 Part 1:
+Day 10 Part 2:
+
+Day 11 Part 1:
+Day 11 Part 2:
+
+Day 12 Part 1:
+Day 12 Part 2:
+
+Day 13 Part 1:
+Day 13 Part 2:
+
+Day 14 Part 1:
+Day 14 Part 2:
+
+Day 15 Part 1:
+Day 15 Part 2:
+
+Day 16 Part 1:
+Day 16 Part 2:
+
+Day 17 Part 1:
+Day 17 Part 2:
+
+Day 18 Part 1:
+Day 18 Part 2:
+
+Day 19 Part 1:
+Day 19 Part 2:
+
+Day 20 Part 1:
+Day 20 Part 2:
+
+Day 21 Part 1:
+Day 21 Part 2:
+
+Day 22 Part 1:
+Day 22 Part 2:
+
+Day 23 Part 1:
+Day 23 Part 2:
+
+Day 24 Part 1:
+Day 24 Part 2:
+
+Day 25 Part 1:
+Day 25 Part 2:
+
+Day 26 Part 1:
+Day 26 Part 2:
+
+Day 27 Part 1:
+Day 27 Part 2:
+
+Day 28 Part 1:
+Day 28 Part 2:
+
+Day 29 Part 1:
+Day 29 Part 2:
+
+Day 30 Part 1:
+Day 30 Part 2:
+
+Day 31 Part 1:
+Day 31 Part 2:
