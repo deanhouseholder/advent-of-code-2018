@@ -15,7 +15,7 @@ Day 04 Part 2: 73001
 Day 05 Part 1: 9296
 Day 05 Part 2: 5534
 
-Day 06 Part 1:
+Day 06 Part 1: 3420
 Day 06 Part 2:
 
 Day 07 Part 1:
