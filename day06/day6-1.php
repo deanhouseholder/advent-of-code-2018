@@ -1,10 +1,8 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 $puzzle = file('puzzle.txt', FILE_IGNORE_NEW_LINES);
-// Built this array backwards so letters can be popped off alphabetically
+$display_map = 0;
+// Built this array backwards so letters can be popped off alphabetically (a-z then A-Z)
 $letter_array = array_merge(range('Z', 'A'), range('z', 'a'));
 $coords_array = [];
 $infinite = [];
@@ -32,22 +30,41 @@ for ($y=0; $y<=$max; $y++) { // Top to bottom
     for ($x=0; $x<=$max; $x++) { // Left to right
         $match = -1;
         $distances = [];
-        foreach ($coords_array as $key => $coords) {
+        // Loop through the array of puzzle coordinates
+        foreach ($coords_array as $letter => $coords) {
             if ($x == $coords[0] && $y == $coords[1]) {
                 // A matching coordinate pair was found for this exact grid point
-                // Use a capital letter to indicate it
-                $match = $key;
+                $match = $letter;
             } else {
-                // This coordinate in the coords array does not match this grid point
+                // This coordinate in the puzzle coords array does not match this grid point
                 // Build array of distances between each coordinate pair and this grid point
-                $distances[$key] = distance($x, $coords[0]) + distance($y, $coords[1]);
+                $distances[$letter] = abs($x - $coords[0]) + abs($y - $coords[1]);
             }
         }
-        $add = $match != -1 ? $match : get_min_or_dot($distances);
+        // $add holds the value to display on the $map
+        if ($match != -1) {
+            $add = $match;
+        } else {
+            // Determine the minimum distance value
+            $min = min($distances);
+            // Find one or more keys which match the minimum value
+            $matches = array_keys($distances, $min);
+            if (count($matches) > 1) {
+                // If more than 1 match, $add is a '.' to indicate more than 1 match
+                $add = ".";
+            } else {
+                // Otherwise, $add is the value of the matching key, which is the letter of the nearest puzzle coordinate
+                $add = $matches[0];
+            }
+        }
+        // Build a visual map
         $map .= $add;
+
+        // Initialize the array key if it doesn't yet exist
         if (!isset($count[$add])) {
             $count[$add] = 0;
         }
+        // Increment an array for each $add which will be used to calculate the sizes of each area
         $count[$add]++;
 
         // Determine if the grid point is touching an edge which would classify the
@@ -59,37 +76,26 @@ for ($y=0; $y<=$max; $y++) { // Top to bottom
     $map .= "\n";
 }
 
-//print $map;
+// Optionally display the map
+if ($display_map) {
+    print $map;
+}
 
+// Remove the '.' element from the array
 unset($count['.']);
+
+// Build a new count array to exclude the "infinite" areas
 foreach ($count as $key => $count) {
     if (!in_array($key, $infinite)) {
         $new_count[$key] = $count;
     }
 }
 
+// Determine the largest area size
 $max = max($new_count);
+
+// Determine the largest area letter
 $largest_group = array_keys($new_count, $max);
 
 print "\nThe largest block is: " . $largest_group[0] . "\n";
 print "The answer is: " . $max . "\n";
-
-function distance($coord1, $coord2) {
-    if ($coord1 > $coord2) {
-        return $coord1 - $coord2;   // coord1 is bigger
-    } elseif ($coord1 < $coord2) {
-        return $coord2 - $coord1;   // coord2 is bigger
-    } else {
-        return 0;                   // coord1 is equal to coord2
-    }
-}
-
-function get_min_or_dot($array) {
-    $min = min($array);
-    $matches = array_keys($array, $min);
-    if (count($matches) > 1) {
-        return ".";
-    } else {
-        return $matches[0];
-    }
-}
